@@ -198,6 +198,12 @@ This project gave me practical experience with:
 - Setting up continuous integration with GitHub Actions
 - Deploying a Python API and managing environment variables
 
+## Documentation
+
+A detailed technical report covering the system architecture, API implementation, database design, automated testing, CI/CD and deployment is available below.
+
+[View Technical Report](docs/HeartbeatSentry-Technical-Report.pdf)
+
 ## Future Improvements
 
 Possible improvements include scheduled health checks, configurable monitoring intervals, downtime alerts, authentication, endpoint management and Docker containerisation.
