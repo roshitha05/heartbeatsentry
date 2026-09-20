@@ -1,13 +1,25 @@
 import os
 
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
+
+load_dotenv()
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
     "sqlite:///./heartbeatsentry.db",
 )
+
+# Neon commonly provides postgresql:// URLs.
+# Tell SQLAlchemy to use the installed psycopg v3 driver.
+if DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace(
+        "postgresql://",
+        "postgresql+psycopg://",
+        1,
+    )
 
 connect_args = {}
 
